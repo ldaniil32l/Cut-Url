@@ -8,6 +8,4 @@ define('DB_NAME', "cut_url");
 define('DB_USER', "root");
 define('DB_PASS', "");
 
-
-
-//const DB_HOST = '127.0.0.1'; //localhost
+session_start();
