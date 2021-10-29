@@ -1,12 +1,11 @@
 <?php
-include "includes/header.php";
+include_once "includes/header.php";
 
-if (isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id'])) {
+if (isset($_SESSION['user']['id'])) {
 	header("Location: " . get_url("profile.php"));
 }
 
 $error = get_error();
-
 $success = get_success();
 
 if (isset($_POST['login']) && !empty($_POST['login'])) {
@@ -31,7 +30,8 @@ if (isset($_POST['login']) && !empty($_POST['login']) && isset($_POST['pass']) &
 		<?php echo $error; ?>
 		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 	</div>
-	<?php } ?>
+	<?php } 
+	?>
 	<div class="row mt-5">
 		<div class="col">
 			<h2 class="text-center">Вход в личный кабинет</h2>
@@ -54,5 +54,5 @@ if (isset($_POST['login']) && !empty($_POST['login']) && isset($_POST['pass']) &
 		</div>
 	</div>
 </main>
-<?php include "includes/footer.php"; ?>
+<?php include_once "includes/footer.php"; ?>
 

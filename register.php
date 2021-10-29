@@ -1,12 +1,11 @@
 <?php
-include "includes/header.php";
+include_once "includes/header.php";
 
-if (isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id'])) {
+if (isset($_SESSION['user']['id'])) {
 	header("Location: " . get_url("profile.php"));
 }
 
 $error = get_error();
-
 $success = get_success();
 
 if (isset($_POST['login']) && !empty($_POST['login'])) {
@@ -56,4 +55,4 @@ if (isset($_POST['login']) && !empty($_POST['login'])) {
 		</div>
 	</div>
 </main>
-<?php include "includes/footer.php"; ?>
+<?php include_once "includes/footer.php"; ?>
